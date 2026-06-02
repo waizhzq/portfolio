@@ -4,24 +4,31 @@ const Education = () => {
   const education = [
     {
       school: "Universiti Utara Malaysia (UUM)",
-      degree: "Bachelor in Applied Linguistics and Business Administration with Honours",
+      degree: "Bachelor of Applied Linguistics and Business Administration with Honours",
       period: "2025 - 2029",
       details: "Current Study",
-      highlight: "In Progress"
+      highlight: "CGPA: 3.50 (Sem 1)"
     },
     {
       school: "SMK Jitra",
       degree: "Sijil Tinggi Persekolahan Malaysia (STPM)",
       period: "2023 - 2024",
       details: "Social Science",
-      highlight: "Completed"
+      highlight: "CGPA: 3.08"
     },
     {
       school: "SMK Bandar Baru Darulaman",
-      degree: "SPM",
+      degree: "Sijil Pelajaran Malaysia (SPM)",
       period: "2022",
       details: "Technical Communication Graphics",
       highlight: "4A's"
+    },
+    {
+      school: "Malaysian University English Test (MUET)",
+      degree: "English Proficiency",
+      period: "2024",
+      details: "",
+      highlight: "Band 4.0"
     }
   ];
 
@@ -55,7 +62,7 @@ const Education = () => {
                       </h4>
                       <p className="text-lg text-gray-500 mt-2 font-medium uppercase tracking-tighter">{item.degree}</p>
                     </div>
-                    <div className="md:text-right">
+                    <div className="md:text-right min-w-fit">
                       <p className="text-xl font-black uppercase text-black">{item.highlight}</p>
                     </div>
                   </div>

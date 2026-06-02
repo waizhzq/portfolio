@@ -24,7 +24,7 @@ const About = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="text-2xl md:text-4xl font-medium tracking-tight leading-[1.2] text-black"
             >
-              My name is Waiz Haziq. I'm a social science student turned degree student at <span className="underline decoration-purple-600">Universiti Utara Malaysia (UUM)</span>. 
+              My name is <span className="font-black">Muhammad Waiz Haziq bin Mohd Suhaimi</span>. I'm an undergraduate student at <span className="underline decoration-purple-600">Universiti Utara Malaysia (UUM)</span>. 
             </motion.p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-lg text-gray-600 leading-relaxed">
@@ -35,9 +35,8 @@ const About = () => {
                 transition={{ duration: 0.8 }}
               >
                 <p>
-                  I have a strong academic and technical knowledge across digital marketing and graphic design. 
-                  My creative journey led me to specialize in branding strategies and freelance jersey designing, 
-                  where I combine technical precision with visual storytelling.
+                  I combine a strong academic foundation with technical expertise in digital marketing, photography, and graphic design. 
+                  As an open-minded, disciplined, and creative ambivert, I excel in collaborative environments where visual storytelling meets strategic thinking.
                 </p>
               </motion.div>
               <motion.div
@@ -47,8 +46,8 @@ const About = () => {
                 transition={{ duration: 0.8 }}
               >
                 <p>
-                  As an ambivert, I thrive in collaborative environments, leveraging my communication skills to bridge ideas 
-                  between team members. I am disciplined, open-minded, and I code for fun to expand my technical horizons.
+                  I possess strong leadership skills, currently serving as the <span className="text-black font-bold uppercase text-sm">Vice President</span> of the UUM Handball Club. 
+                  Beyond design, I code for fun to expand my technical horizons and bridge the gap between creative arts and technology.
                 </p>
               </motion.div>
             </div>
@@ -56,19 +55,19 @@ const About = () => {
             <div className="pt-12 border-t border-gray-200 grid grid-cols-2 md:grid-cols-4 gap-8">
               <div>
                 <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-4">Focus</p>
-                <p className="text-sm font-bold uppercase">Jersey Design</p>
+                <p className="text-sm font-bold uppercase">Apparel & Branding</p>
               </div>
               <div>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-4">Education</p>
-                <p className="text-sm font-bold uppercase">Degree @ UUM</p>
+                <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-4">Leadership</p>
+                <p className="text-sm font-bold uppercase">VP @ UUM Handball</p>
               </div>
               <div>
                 <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-4">Language</p>
                 <p className="text-sm font-bold uppercase">Malay / English</p>
               </div>
               <div>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-4">Tech</p>
-                <p className="text-sm font-bold uppercase">JS / TS / React</p>
+                <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-4">Current CGPA</p>
+                <p className="text-sm font-bold uppercase">3.50 (Sem 1)</p>
               </div>
             </div>
           </div>

@@ -3,23 +3,39 @@ import { motion } from 'framer-motion';
 const Experience = () => {
   const experiences = [
     {
+      company: "UUM Handball Club",
+      role: "Vice President",
+      period: "Current",
+      description: [
+        "Lead executive club operations and manage communication between members and university administration.",
+        "Coordinate team training, logistics, and club events while fostering a collaborative athletic culture."
+      ]
+    },
+    {
+      company: "Freelance Designer",
+      role: "Apparel & Graphic Specialist",
+      period: "Ongoing",
+      description: [
+        "Specialize in custom jersey sublimation and high-quality promotional posters.",
+        "Utilize advanced vector-based tools for precise, scalable, and print-ready graphics."
+      ]
+    },
+    {
       company: "ZUS Coffee",
-      role: "Barista",
+      role: "Part-Time Barista",
       period: "March - September 2025",
       description: [
-        "Crafting premium coffee beverages with precision.",
-        "Providing exceptional customer service in a high-paced environment.",
-        "Maintaining workflow efficiency and quality standards."
+        "Maintained high standards of beverage preparation in a fast-paced environment.",
+        "Demonstrated strong teamwork, adaptability, and communication skills."
       ]
     },
     {
       company: "Blugrafix",
-      role: "Digital Marketer / Graphics Designer",
-      period: "Present",
+      role: "Digital Marketer & Graphics Designer",
+      period: "2023 - 2024",
       description: [
-        "Specializing in freelance jersey designing and apparel graphics.",
-        "Designing social media content, logos, and branding strategies.",
-        "Creating visuals using Canva, Picsart, and Photoshop."
+        "Designed social media content, logos, and branding strategies for company projects.",
+        "Created clothing graphics, patterns, and prints for various apparel."
       ]
     },
     {
@@ -27,9 +43,8 @@ const Experience = () => {
       role: "Photographer",
       period: "Ongoing",
       description: [
-        "Capturing and editing high-quality event and portrait photography.",
-        "Post-processing using Lightroom and Snapseed.",
-        "Providing creative direction for visual excellence."
+        "Captured and edited event/portrait photography with high-quality post-processing.",
+        "Provided creative direction to clients for premium visual outcomes."
       ]
     }
   ];
