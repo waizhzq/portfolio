@@ -2,17 +2,51 @@ import { motion } from 'framer-motion';
 
 const Works = () => {
   const works = [
-    { title: "Jersey Design Collection", category: "Apparel / Graphic Design", year: "2026" },
-    { title: "Blugrafix Rebrand", category: "Branding / Digital", year: "2025" },
-    { title: "ZUS Coffee Visuals", category: "Photography", year: "2025" },
-    { title: "Personal Portfolio", category: "Web Design / Coding", year: "2026" },
+    {
+      title: "Freelance Designer",
+      category: "Apparel & Branding",
+      year: "Current",
+      details: [
+        "Specialize in apparel design, specifically focusing on custom jersey sublimation and high-quality promotional posters.",
+        "Utilize advanced vector-based tools to create precise, scalable, and print-ready graphics for various clients and teams."
+      ]
+    },
+    {
+      title: "ZUS Coffee",
+      category: "Service & Operations",
+      year: "2025",
+      details: [
+        "Delivered excellent customer service and maintained high standards of beverage preparation in a fast-paced environment.",
+        "Demonstrated strong teamwork, adaptability, and communication skills while assisting with daily store operations."
+      ]
+    },
+    {
+      title: "Blugrafix",
+      category: "Digital Marketing",
+      year: "2023 - 2024",
+      details: [
+        "Designed social media content, logos, and marketing materials using Canva, Picsart, and Photoshop.",
+        "Created branding strategies and visuals for various company projects.",
+        "Designed clothing graphics, patterns, and prints for a variety of apparel."
+      ]
+    },
+    {
+      title: "Freelance Photographer",
+      category: "Visual Arts",
+      year: "Ongoing",
+      details: [
+        "Captured and edited photos for clients, focusing on events and portraits.",
+        "Utilized Lightroom and Snapseed for high-quality post-processing.",
+        "Provided creative direction to clients to ensure premium visual outcomes."
+      ]
+    }
   ];
 
   return (
     <div className="bg-white min-h-screen pt-20 pb-32">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-        <h2 className="text-[11px] font-bold tracking-[0.4em] uppercase text-gray-400 mb-8">Selected Works</h2>
-        <div className="space-y-12">
+        <h2 className="text-[11px] font-bold tracking-[0.4em] uppercase text-gray-400 mb-16">Selected Portfolio</h2>
+        <div className="space-y-24">
           {works.map((work, index) => (
             <motion.div 
               key={index}
@@ -20,15 +54,28 @@ const Works = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="group cursor-pointer"
+              className="group"
             >
-              <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-black pb-8 group-hover:border-purple-600 transition-colors duration-500">
-                <div>
-                  <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4">{work.category}</p>
-                  <h3 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter group-hover:pl-8 transition-all duration-500">{work.title}</h3>
+              <div className="border-b border-black pb-12 group-hover:border-purple-600 transition-colors duration-500">
+                <div className="flex flex-col md:flex-row md:items-end justify-between mb-8">
+                  <div>
+                    <p className="text-[10px] font-bold text-purple-600 uppercase tracking-widest mb-4">{work.category}</p>
+                    <h3 className="text-4xl md:text-7xl font-black uppercase tracking-tighter group-hover:pl-8 transition-all duration-500">
+                      {work.title}
+                    </h3>
+                  </div>
+                  <div className="mt-4 md:mt-0">
+                    <p className="text-2xl font-black uppercase text-black">{work.year}</p>
+                  </div>
                 </div>
-                <div className="mt-4 md:mt-0">
-                  <p className="text-2xl font-black uppercase text-black">{work.year}</p>
+                <div className="max-w-3xl">
+                  <ul className="space-y-4">
+                    {work.details.map((detail, i) => (
+                      <li key={i} className="text-lg md:text-xl text-gray-600 font-medium leading-tight">
+                        — {detail}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </motion.div>
