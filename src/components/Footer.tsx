@@ -1,15 +1,28 @@
+import { motion } from 'framer-motion';
+
 const Footer = () => {
   return (
-    <footer className="bg-purple-900 text-white py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p className="text-xl font-bold mb-4">Waiz Haziq</p>
-        <p className="text-purple-200 mb-8">Social Science Student & Graphic Designer</p>
-        <div className="flex justify-center space-x-6 mb-8">
-          {/* Social icons could go here */}
+    <footer className="bg-white border-t border-black py-20">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+        <div className="flex flex-col md:flex-row justify-between items-end gap-12">
+          <div className="max-w-md">
+            <h4 className="text-[11px] font-bold tracking-[0.4em] uppercase text-gray-400 mb-6">Contact</h4>
+            <a href="mailto:waizhzq@gmail.com" className="text-3xl md:text-5xl font-bold uppercase tracking-tighter hover:text-purple-600 transition-colors">
+              waizhzq@gmail.com
+            </a>
+          </div>
+          
+          <div className="text-right">
+            <div className="flex space-x-8 mb-8 justify-end">
+              <a href="#" className="text-[10px] font-bold uppercase tracking-widest hover:text-purple-600 transition-colors">Instagram</a>
+              <a href="#" className="text-[10px] font-bold uppercase tracking-widest hover:text-purple-600 transition-colors">LinkedIn</a>
+              <a href="#" className="text-[10px] font-bold uppercase tracking-widest hover:text-purple-600 transition-colors">Behance</a>
+            </div>
+            <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">
+              © {new Date().getFullYear()} Waiz Haziq — All Rights Reserved
+            </p>
+          </div>
         </div>
-        <p className="text-purple-400 text-sm">
-          &copy; {new Date().getFullYear()} Waiz Haziq. All rights reserved.
-        </p>
       </div>
     </footer>
   );

@@ -1,58 +1,68 @@
+import { motion } from 'framer-motion';
+
 const Education = () => {
   const education = [
     {
-      school: "Applied Linguistics and Business Administration with Honours",
-      degree: "Bachelor's Degree",
+      school: "Universiti Utara Malaysia (UUM)",
+      degree: "Bachelor in Applied Linguistics and Business Administration with Honours",
       period: "2025 - 2029",
-      details: "Currently studying",
-      highlight: "In progress"
+      details: "Current Study",
+      highlight: "In Progress"
     },
     {
       school: "SMK Jitra",
       degree: "Sijil Tinggi Persekolahan Malaysia (STPM)",
       period: "2023 - 2024",
       details: "Social Science",
-      highlight: "PNGK (TBC)"
+      highlight: "Completed"
     },
     {
-      school: "Sekolah Menengah Kebangsaan Bandar Baru Darulaman",
+      school: "SMK Bandar Baru Darulaman",
       degree: "SPM",
       period: "2022",
       details: "Technical Communication Graphics",
       highlight: "4A's"
-    },
-    {
-      school: "Malaysian University English Test (MUET)",
-      degree: "English Proficiency",
-      period: "2024",
-      details: "",
-      highlight: "Band 4.0"
     }
   ];
 
   return (
-    <div className="bg-white py-20">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-gray-900 mb-12 border-l-8 border-purple-600 pl-6">Education</h2>
-        <div className="space-y-12">
-          {education.map((item, index) => (
-            <div key={index} className="relative pl-8 border-l-2 border-purple-100 pb-8 last:pb-0">
-              <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-purple-600 shadow-[0_0_0_4px_rgba(147,51,234,0.1)]"></div>
-              <div className="flex flex-col md:flex-row md:justify-between md:items-start">
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-900">{item.school}</h3>
-                  <p className="text-purple-600 font-semibold mt-1">{item.degree}</p>
-                  {item.details && <p className="text-gray-600 mt-2 italic">{item.details}</p>}
-                </div>
-                <div className="mt-4 md:mt-0 md:text-right">
-                  <span className="bg-purple-50 text-purple-700 px-4 py-1 rounded-full text-sm font-bold border border-purple-100">
-                    {item.period}
-                  </span>
-                  <p className="text-purple-900 font-bold mt-2 text-lg">{item.highlight}</p>
-                </div>
-              </div>
+    <div className="bg-white min-h-screen pt-20 pb-32">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+        <div className="flex flex-col lg:flex-row gap-20">
+          <div className="lg:w-1/3">
+            <h2 className="text-[11px] font-bold tracking-[0.4em] uppercase text-gray-400 mb-8">03 / Learning</h2>
+            <h3 className="text-4xl font-bold uppercase tracking-tighter text-black leading-none">
+              Educational <br /> Path
+            </h3>
+          </div>
+          
+          <div className="lg:w-2/3">
+            <div className="space-y-24">
+              {education.map((item, index) => (
+                <motion.div 
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  className="group"
+                >
+                  <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-4 border-b border-black pb-8">
+                    <div className="flex-grow">
+                      <p className="text-[11px] font-bold tracking-widest text-purple-600 uppercase mb-4">{item.period}</p>
+                      <h4 className="text-2xl md:text-3xl font-bold uppercase tracking-tight text-black group-hover:pl-4 transition-all duration-500">
+                        {item.school}
+                      </h4>
+                      <p className="text-lg text-gray-500 mt-2 font-medium uppercase tracking-tighter">{item.degree}</p>
+                    </div>
+                    <div className="md:text-right">
+                      <p className="text-xl font-black uppercase text-black">{item.highlight}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </div>

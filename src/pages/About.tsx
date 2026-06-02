@@ -1,49 +1,78 @@
+import { motion } from 'framer-motion';
+
 const About = () => {
   return (
-    <div className="bg-white py-20">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-gray-900 mb-8 border-l-8 border-purple-600 pl-6">About Me</h2>
-        <div className="prose prose-purple lg:prose-xl text-gray-600 space-y-6">
-          <p>
-            My name is <span className="font-bold text-purple-700">Waiz Haziq</span> (MUHAMMAD BIN MOHD WAIZ SUHAIMI HAZIQ). 
-            I am currently a student pursuing a Bachelor in Applied Linguistics and Business Administration with Honours (2025-2029).
-          </p>
-          <p>
-            I have a strong academic and technical knowledge across digital marketing and graphic design. 
-            I consider myself an ambivert—open-minded, disciplined, creative, and able to work effectively in a group. 
-            This allows me to maintain excellent communication skills with friends and colleagues alike.
-          </p>
-          <p>
-            Beyond my academic pursuits, I have a deep interest in technology and visual arts. I code for fun, 
-            which complements my technical background in graphic design and digital media.
-          </p>
-        </div>
-
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-purple-50 p-8 rounded-2xl">
-            <h3 className="text-xl font-bold text-purple-900 mb-4">Languages</h3>
-            <ul className="space-y-2 text-purple-800">
-              <li className="flex items-center">
-                <span className="w-2 h-2 bg-purple-600 rounded-full mr-3"></span>
-                Malay (Native)
-              </li>
-              <li className="flex items-center">
-                <span className="w-2 h-2 bg-purple-600 rounded-full mr-3"></span>
-                English (Fluent - MUET Band 4.0)
-              </li>
-            </ul>
+    <div className="bg-white min-h-screen pt-20 pb-32">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="flex flex-col lg:flex-row gap-20"
+        >
+          <div className="lg:w-1/3">
+            <h2 className="text-[11px] font-bold tracking-[0.4em] uppercase text-gray-400 mb-8">01 / Profile</h2>
+            <h3 className="text-4xl font-bold uppercase tracking-tighter text-black leading-none">
+              Behind the <br /> Vision
+            </h3>
           </div>
-          <div className="bg-purple-50 p-8 rounded-2xl">
-            <h3 className="text-xl font-bold text-purple-900 mb-4">Personality</h3>
-            <div className="flex flex-wrap gap-2">
-              {['Ambivert', 'Open-minded', 'Disciplined', 'Creative', 'Team Player'].map((trait) => (
-                <span key={trait} className="bg-white px-4 py-1 rounded-full text-purple-700 border border-purple-200 text-sm font-medium">
-                  {trait}
-                </span>
-              ))}
+          
+          <div className="lg:w-2/3 space-y-12">
+            <motion.p 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="text-2xl md:text-4xl font-medium tracking-tight leading-[1.2] text-black"
+            >
+              My name is Waiz Haziq. I'm a social science student turned degree student at <span className="underline decoration-purple-600">Universiti Utara Malaysia (UUM)</span>. 
+            </motion.p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-lg text-gray-600 leading-relaxed">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
+                <p>
+                  I have a strong academic and technical knowledge across digital marketing and graphic design. 
+                  My creative journey led me to specialize in branding strategies and freelance jersey designing, 
+                  where I combine technical precision with visual storytelling.
+                </p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
+                <p>
+                  As an ambivert, I thrive in collaborative environments, leveraging my communication skills to bridge ideas 
+                  between team members. I am disciplined, open-minded, and I code for fun to expand my technical horizons.
+                </p>
+              </motion.div>
+            </div>
+
+            <div className="pt-12 border-t border-gray-200 grid grid-cols-2 md:grid-cols-4 gap-8">
+              <div>
+                <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-4">Focus</p>
+                <p className="text-sm font-bold uppercase">Jersey Design</p>
+              </div>
+              <div>
+                <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-4">Education</p>
+                <p className="text-sm font-bold uppercase">Degree @ UUM</p>
+              </div>
+              <div>
+                <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-4">Language</p>
+                <p className="text-sm font-bold uppercase">Malay / English</p>
+              </div>
+              <div>
+                <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-4">Tech</p>
+                <p className="text-sm font-bold uppercase">JS / TS / React</p>
+              </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

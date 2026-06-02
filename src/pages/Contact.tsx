@@ -1,74 +1,86 @@
+import { motion } from 'framer-motion';
+
 const Contact = () => {
   return (
-    <div className="bg-white py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">Contact Me</h2>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Info */}
-          <div className="bg-purple-900 rounded-3xl p-8 lg:p-12 text-white">
-            <h3 className="text-3xl font-bold mb-8">Get in Touch</h3>
-            <div className="space-y-8">
-              <div className="flex items-start">
-                <div className="bg-purple-800 p-3 rounded-xl mr-6">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="text-purple-300 text-sm font-semibold uppercase tracking-wider mb-1">Address</p>
-                  <p className="text-lg">No 645, Taman Tunku Sarina, Lorong Diana 6, Bandar Darulaman, 06000, Jitra, Kedah</p>
-                </div>
+    <div className="bg-white min-h-screen pt-20 pb-32">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="flex flex-col lg:flex-row gap-20"
+        >
+          <div className="lg:w-1/3">
+            <h2 className="text-[11px] font-bold tracking-[0.4em] uppercase text-gray-400 mb-8">05 / Connection</h2>
+            <h3 className="text-4xl font-bold uppercase tracking-tighter text-black leading-none">
+              Let's build <br /> something great
+            </h3>
+            
+            <div className="mt-20 space-y-12">
+              <div>
+                <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2">Location</p>
+                <p className="text-sm font-bold uppercase">Kedah, Malaysia</p>
               </div>
-
-              <div className="flex items-start">
-                <div className="bg-purple-800 p-3 rounded-xl mr-6">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="text-purple-300 text-sm font-semibold uppercase tracking-wider mb-1">Email</p>
-                  <p className="text-lg">waizhzq@gmail.com</p>
-                </div>
-              </div>
-
-              <div className="flex items-start">
-                <div className="bg-purple-800 p-3 rounded-xl mr-6">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="text-purple-300 text-sm font-semibold uppercase tracking-wider mb-1">Phone</p>
-                  <p className="text-lg">013-4195880</p>
+              <div>
+                <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2">Socials</p>
+                <div className="flex flex-col space-y-2">
+                   <a href="#" className="text-sm font-bold uppercase hover:text-purple-600 transition-colors">Instagram</a>
+                   <a href="#" className="text-sm font-bold uppercase hover:text-purple-600 transition-colors">LinkedIn</a>
                 </div>
               </div>
             </div>
           </div>
+          
+          <div className="lg:w-2/3">
+            <form className="space-y-12">
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400 block mb-4">What's your name?</label>
+                <input 
+                  type="text" 
+                  className="w-full bg-transparent border-b border-black py-4 text-2xl font-bold uppercase tracking-tighter focus:outline-none focus:border-purple-600 transition-colors"
+                  placeholder="Type here..."
+                />
+              </motion.div>
 
-          {/* Simple Contact Form Placeholder */}
-          <div className="bg-purple-50 rounded-3xl p-8 lg:p-12 border border-purple-100">
-            <h3 className="text-2xl font-bold text-gray-900 mb-8">Send a Message</h3>
-            <form className="space-y-6">
-              <div>
-                <label className="block text-gray-700 font-semibold mb-2">Name</label>
-                <input type="text" className="w-full px-4 py-3 rounded-xl border border-purple-200 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Your Name" />
-              </div>
-              <div>
-                <label className="block text-gray-700 font-semibold mb-2">Email</label>
-                <input type="email" className="w-full px-4 py-3 rounded-xl border border-purple-200 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="your@email.com" />
-              </div>
-              <div>
-                <label className="block text-gray-700 font-semibold mb-2">Message</label>
-                <textarea className="w-full px-4 py-3 rounded-xl border border-purple-200 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent h-32" placeholder="Your Message"></textarea>
-              </div>
-              <button type="button" className="w-full bg-purple-600 text-white font-bold py-4 rounded-xl hover:bg-purple-700 transition duration-300">
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
+                <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400 block mb-4">Your Email Address</label>
+                <input 
+                  type="email" 
+                  className="w-full bg-transparent border-b border-black py-4 text-2xl font-bold uppercase tracking-tighter focus:outline-none focus:border-purple-600 transition-colors"
+                  placeholder="email@address.com"
+                />
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              >
+                <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400 block mb-4">Tell me about your project</label>
+                <textarea 
+                  className="w-full bg-transparent border-b border-black py-4 text-2xl font-bold uppercase tracking-tighter focus:outline-none focus:border-purple-600 transition-colors h-32 resize-none"
+                  placeholder="Briefly describe..."
+                />
+              </motion.div>
+
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-black text-white px-12 py-6 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-purple-600 transition-colors"
+              >
                 Send Message
-              </button>
+              </motion.button>
             </form>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
