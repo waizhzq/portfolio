@@ -44,21 +44,21 @@ const Home = () => {
 
       {/* Large Image Section */}
       <section className="py-12">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 flex justify-center">
           <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1.2 }}
-            className="relative aspect-[4/5] md:aspect-[16/9] overflow-hidden bg-gray-100 group"
+            className="relative w-full md:w-2/3 lg:w-1/2 aspect-[2/3] max-h-[85vh] overflow-hidden bg-gray-50 group border border-black"
           >
             <img 
               src={profileImg} 
               alt="Waiz Haziq" 
-              className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 ease-in-out scale-110 group-hover:scale-100"
+              className="w-full h-full object-cover object-[center_top] grayscale hover:grayscale-0 transition-all duration-1000 ease-in-out group-hover:scale-105"
             />
-            <div className="absolute bottom-12 left-12 text-white z-10 hidden md:block">
-              <p className="text-[11px] font-bold tracking-[0.3em] uppercase">Visual Identity / 2026</p>
+            <div className="absolute bottom-8 left-8 text-white z-10 hidden md:block mix-blend-difference">
+              <p className="text-[10px] font-bold tracking-[0.3em] uppercase">Identity / 01</p>
             </div>
           </motion.div>
         </div>
