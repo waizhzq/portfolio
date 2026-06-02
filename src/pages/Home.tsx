@@ -14,6 +14,7 @@ const Home = () => {
             className="text-[12vw] leading-[0.9] font-black uppercase tracking-tighter text-black"
           >
             Waiz <br /> Haziq
+            <span className="block text-[2vw] tracking-[0.5em] text-purple-600 mt-4">WaziENT</span>
           </motion.h1>
           
           <div className="flex flex-col md:flex-row justify-between items-start mt-12 gap-8">
