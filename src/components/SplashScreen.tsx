@@ -20,7 +20,7 @@ const SplashScreen = () => {
         }}
         className="relative"
       >
-        <img src={splashLogo} alt="WaziENT" className="w-64 md:w-80" />
+        <img src={splashLogo} alt="wazi.gfx" className="w-64 md:w-80" />
         <motion.div 
           initial={{ width: 0 }}
           animate={{ width: "100%" }}

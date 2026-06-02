@@ -13,8 +13,8 @@ const Navbar = () => {
             transition={{ duration: 0.8 }}
           >
             <Link to="/" className="flex items-center group">
-              <img src={logo} alt="WaziENT" className="h-10 md:h-12 w-auto invert group-hover:scale-105 transition-transform" />
-              <span className="ml-4 text-xs font-black tracking-[0.3em] uppercase hidden sm:block">WaziENT</span>
+              <img src={logo} alt="wazi.gfx" className="h-10 md:h-12 w-auto group-hover:scale-105 transition-transform" />
+              <span className="ml-4 text-xs font-black tracking-[0.3em] uppercase hidden sm:block">wazi.gfx</span>
             </Link>
           </motion.div>
           
