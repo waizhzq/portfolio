@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
 
 // Import jersey designs
 import design1 from '../assets/designs/1.png';
@@ -11,6 +12,9 @@ import design7 from '../assets/designs/SHamDeisgnOffv2.png';
 import design8 from '../assets/designs/SMEBANKMERCH.png';
 
 const Works = () => {
+  const [activeGallery, setActiveGallery] = useState<number | null>(null);
+  const [currentImgIndex, setCurrentImgIndex] = useState(0);
+
   const works = [
     {
       title: "Freelance Designer",
@@ -53,6 +57,14 @@ const Works = () => {
     }
   ];
 
+  const nextImage = (images: string[]) => {
+    setCurrentImgIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const prevImage = (images: string[]) => {
+    setCurrentImgIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
   return (
     <div className="bg-white min-h-screen pt-20 pb-32">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
@@ -90,28 +102,82 @@ const Works = () => {
                 </div>
                 
                 {work.images && (
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-                    {work.images.map((img, i) => (
-                      <motion.div
-                        key={i}
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="aspect-[3/4] overflow-hidden bg-gray-100 rounded-lg cursor-pointer shadow-sm hover:shadow-xl transition-shadow duration-500"
-                      >
-                        <img 
-                          src={img} 
-                          alt={`${work.title} design ${i + 1}`}
-                          className="w-full h-full object-cover"
-                        />
-                      </motion.div>
-                    ))}
-                  </div>
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => {
+                      setActiveGallery(index);
+                      setCurrentImgIndex(0);
+                    }}
+                    className="px-8 py-4 bg-black text-white text-xs font-bold uppercase tracking-widest hover:bg-purple-600 transition-colors duration-300 rounded-full"
+                  >
+                    View Project Designs
+                  </motion.button>
                 )}
               </div>
             </motion.div>
           ))}
         </div>
       </div>
+
+      {/* Fullscreen Gallery Overlay */}
+      <AnimatePresence>
+        {activeGallery !== null && works[activeGallery].images && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4 md:p-12"
+          >
+            <button 
+              onClick={() => setActiveGallery(null)}
+              className="absolute top-8 right-8 text-white text-4xl hover:text-purple-500 transition-colors z-[60]"
+            >
+              ×
+            </button>
+
+            <div className="relative w-full h-full flex items-center justify-center">
+              {/* Navigation Arrows */}
+              <button 
+                onClick={(e) => { e.stopPropagation(); prevImage(works[activeGallery].images!); }}
+                className="absolute left-0 md:left-4 z-[60] text-white/50 hover:text-white text-4xl md:text-6xl p-4 transition-colors"
+              >
+                ←
+              </button>
+              
+              <button 
+                onClick={(e) => { e.stopPropagation(); nextImage(works[activeGallery].images!); }}
+                className="absolute right-0 md:right-4 z-[60] text-white/50 hover:text-white text-4xl md:text-6xl p-4 transition-colors"
+              >
+                →
+              </button>
+
+              {/* Image Container */}
+              <div className="w-full h-full flex flex-col items-center justify-center gap-4">
+                <motion.div
+                  key={currentImgIndex}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.4 }}
+                  className="relative w-full h-[70vh] md:h-[80vh] flex items-center justify-center"
+                >
+                  <img 
+                    src={works[activeGallery].images[currentImgIndex]} 
+                    alt="Jersey Design"
+                    className="max-w-full max-h-full object-contain shadow-2xl"
+                  />
+                </motion.div>
+                
+                {/* Counter */}
+                <div className="text-white/40 text-[10px] font-bold tracking-[0.4em] uppercase">
+                  {currentImgIndex + 1} / {works[activeGallery].images?.length}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
