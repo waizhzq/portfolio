@@ -1,5 +1,15 @@
 import { motion } from 'framer-motion';
 
+// Import jersey designs
+import design1 from '../assets/designs/1.png';
+import design2 from '../assets/designs/asset2.png';
+import design3 from '../assets/designs/finallooksabah.png';
+import design4 from '../assets/designs/kpcpenangtakrawv2.png';
+import design5 from '../assets/designs/NPfinallook.png';
+import design6 from '../assets/designs/SHamDeisgnOffalternate.png';
+import design7 from '../assets/designs/SHamDeisgnOffv2.png';
+import design8 from '../assets/designs/SMEBANKMERCH.png';
+
 const Works = () => {
   const works = [
     {
@@ -9,7 +19,8 @@ const Works = () => {
       details: [
         "Specialize in apparel design, specifically focusing on custom jersey sublimation and high-quality promotional posters.",
         "Utilize advanced vector-based tools to create precise, scalable, and print-ready graphics for various clients and teams."
-      ]
+      ],
+      images: [design1, design2, design3, design4, design5, design6, design7, design8]
     },
     {
       title: "ZUS Coffee",
@@ -68,7 +79,7 @@ const Works = () => {
                     <p className="text-2xl font-black uppercase text-black">{work.year}</p>
                   </div>
                 </div>
-                <div className="max-w-3xl">
+                <div className="max-w-3xl mb-12">
                   <ul className="space-y-4">
                     {work.details.map((detail, i) => (
                       <li key={i} className="text-lg md:text-xl text-gray-600 font-medium leading-tight">
@@ -77,6 +88,25 @@ const Works = () => {
                     ))}
                   </ul>
                 </div>
+                
+                {work.images && (
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+                    {work.images.map((img, i) => (
+                      <motion.div
+                        key={i}
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="aspect-[3/4] overflow-hidden bg-gray-100 rounded-lg cursor-pointer shadow-sm hover:shadow-xl transition-shadow duration-500"
+                      >
+                        <img 
+                          src={img} 
+                          alt={`${work.title} design ${i + 1}`}
+                          className="w-full h-full object-cover"
+                        />
+                      </motion.div>
+                    ))}
+                  </div>
+                )}
               </div>
             </motion.div>
           ))}
